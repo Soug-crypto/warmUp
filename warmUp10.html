@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		WarmUp10 time!
+	</title>
+	<link rel="stylesheet" type="text/css" href="WarmUp10.css">
+</head>
+<body>
+	<div>
+		<input type="text">
+	</div>
+	<div>
+		<button>Add to the text below</button>
+	</div>
+	<div>
+		<ul>
+			<li id="MainLi"><strong>The List of Inputs is below:</strong></li>
+		</ul>
+	</div>
+	<script
+	  src="https://code.jquery.com/jquery-3.4.1.js"
+	  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+	  crossorigin="anonymous">
+	</script>
+	<script>
+		var n=1
+		$(button).on("click", function (){
+
+			if (n%2===1) {
+				$("li").append("<li> $('li').text($('input').val()) </li>").addClass(".class1")
+			} else {
+				$("li").append("<li> $('li').text($('input').val()) </li>").addClass(".class2")
+			}
+
+			n++;
+
+			});
+	</script>
+	<script type="text/javascript" href="WarmUpD10.js"></script>
+
+</body>
+</html>
