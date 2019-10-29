@@ -24,13 +24,17 @@
 	  crossorigin="anonymous">
 	</script>
 	<script>
+
 		var n=1
-		$(button).on("click", function (){
+
+		$('button').on("click", function (){
+
+			var x = $('input').val();
 
 			if (n%2===1) {
-				$("li").append("<li> $('li').text($('input').val()) </li>").addClass(".class1")
+				$("ul").append("<li 'class2' >"+ x + "</li>")
 			} else {
-				$("li").append("<li> $('li').text($('input').val()) </li>").addClass(".class2")
+				$("ul").append("<li class= 'class2'>"+ x + "</li>")
 			}
 
 			n++;
