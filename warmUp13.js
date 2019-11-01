@@ -9,13 +9,18 @@
         Help:
 
             Symbol    Value
-            I          1
-            V          5
-            X          10
-            L          50
-            C          100
-            D          500
-            M          1,000 
+            {
+            I : 1,
+            V : 5,
+            X : 10,
+            L : 50,
+            C : 100,
+            D : 500,
+            M : 1,000
+            } 
+
+
+
     
     2. Complete the method/function so that it converts dash/underscore delimited words into camel casing. The first word within the output should be capitalized only if the original word was capitalized (known as Upper Camel Case, also often referred to as Pascal case).
         Examples:
@@ -31,3 +36,76 @@
             filter_list([1,'a','b',0,15]) == [1,0,15]
             filter_list([1,2,'aasf','1','123',123]) == [1,2,123]
 */
+
+
+
+// Q1: The following algorithim only adds (partial answer)
+
+function deRomanize(str){
+
+
+    var arr = str.split('');
+    var acc = 0
+
+
+    var Decoder = {
+            I : 1,
+            V : 5,
+            X : 10,
+            L : 50,
+            C : 100,
+            D : 500,
+            M : 1000
+            } 
+
+     for (var i = 0; i < arr.length; i++) {
+
+        for (var j = 0; j < Object.keys(Decoder).length ; j++) {
+
+            if (arr[i] ===  Object.keys(Decoder)[j]) {
+
+                acc = acc + Decoder[Object.keys(Decoder)[j]];
+
+            }
+            
+        }
+  
+    }
+
+    return acc;
+}
+
+
+
+//Q2:
+
+function toCamelCase(str){
+
+    var arr= str.split("-")
+    var arr2=[]
+
+    for (var i = 0; i < arr.length; i++) {
+
+        if (i === 1)
+
+        arr2=arr.push(arr[i][0].toUpperCase()) 
+    
+
+    }
+
+
+    return arr
+
+}
+
+
+
+//Q3:  use parseIn()
+
+
+
+
+
+
+
+
