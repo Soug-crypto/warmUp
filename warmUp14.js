@@ -20,37 +20,36 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
 */
 
 
-//find the minimum price with array.reduce()
-// if min is the last day (i === array.length-1), return max profit = 0
-//if not, compare to the rest of the week (because you cannot buy today and sell the stock yesterday)
 
-var maxProfit = function(prices) {
+var maxProfit = function (prices){
 
-	var min, max=0;
+	var arr = [], maxDiff = 0, maxAt;
 
-	var Maximum = max - min
+	for (var i = 0; i < prices.length; i++) {
 
-	prices.reduce(function(elem){
-		if(elem===Math.min(...prices)){
-			return min = elem;
-		}
-
-	})
-
-	if (prices.indexOf(min)=== array.length-1) {
-		return "Maximum prrofit is: 0";
-	} 
-
-
-	for (var i = prices.indexOf(min); i < prices.length; i++) {
-
-		if (prices[i]>max){
-
-			max = prices[i]
-		}
-
+		for (var j = i; j < prices.length; j++) {
+	 		arr.push({difference:[prices[j] - prices[i]],
+	 					indeces: "Buy on day " + (i + 1) + " and sell on day " + (j + 1)
+	 		})
+	 	}
+		
 	}
 
-	return "Maximum profit is: " + Maximum
+	for (var i = 0; i <arr.length; i++) {
 
-};
+		if (arr[i].difference > maxDiff) {
+			maxDiff =  arr[i].difference
+			maxAt = arr[i].indeces
+		}
+	}
+
+	if (maxAt === undefined) {
+
+		return "It is a terrible day to invest, go outside and play under the sun!"
+	}
+
+	return maxAt + " to get the maximum difference of " + maxDiff;
+
+}
+
+
