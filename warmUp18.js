@@ -10,3 +10,27 @@
 
 // input   =  "aaaaaaaaaaaa"
 // result  =  "123456789101112"
+
+
+function countOcurrance(str){
+	var arr = str.split(''), acc = '', resultArray = [];
+
+	for (var i = 0; i < arr.length; i++) {
+
+		acc = 1;
+
+		for (var j = 0; j < i; j++) {
+			
+			if (arr[i]===arr[j]) {
+				acc = acc + 1;
+			}
+			
+		}
+
+		resultArray.push(acc)
+
+	}
+
+	return resultArray.join('');
+
+}
